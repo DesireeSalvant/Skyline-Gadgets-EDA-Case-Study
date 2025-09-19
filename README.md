@@ -23,7 +23,10 @@ The goal of this analysis is to uncover actionable insights into what sells best
 
 ## Dashboard Summary: Skyline Sales Dashboard
 
-[🔗 Click here to view the live interactive dashboard](https://skyline-interactive-dashboard-bxi5mxm9vqlmvxuserf9w.streamlit.app)
+Live App 👉 [Click here to view the interactive dashboard](https://skyline-interactive-dashboard-bxi5xmxm9vqlmvxuserf9w.streamlit.app/)
+
+This interactive dashboard visualizes key performance metrics for Skyline Gadgets, including revenue trends, top products, category distribution, and more.
+
 
 ![Dashboard Overview](dashboardphoto.png)
 
