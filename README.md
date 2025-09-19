@@ -82,7 +82,7 @@ The goal of this analysis is to uncover actionable insights into what sells best
 
 ---
 
-## 📌 Strategic Recommendations
+##  Strategic Recommendations
 
 ### 1. Product Category Strategy
 
@@ -174,23 +174,51 @@ The goal of this analysis is to uncover actionable insights into what sells best
 
 ---
 
-### 5. Data Quality and Governance
+# Assumptions
 
-**a. Validation at Entry**
-- Ensure future files follow consistent formatting:
-  - `YYYY-MM-DD` for dates
-  - No missing prices or quantities
-  - Clean and unique product/category names
-
-**b. Schema & Documentation**
-- Create a data dictionary including:
-  - Accepted values and formats
-  - Required vs optional fields
-- Use Excel validation rules or backend systems to enforce integrity.
+- All sales data is from a single monthly cohort ("May Cohort") unless otherwise stated.
+- Missing or malformed date values have been temporarily labeled as `"Unknown"`; a future cleanup is recommended.
+- Prices and quantities are assumed accurate post-cleaning; no major anomalies were found post-validation.
+- Product and category names were standardized manually during the cleaning process (e.g., typos and casing).
+- The number of units sold per order is unusually high (≈27 items per order), which could be due to:
+  - Bulk purchases
+  - Bundled orders
+  - Data entry anomalies (not confirmed without order-level metadata)
+- Revenue was calculated using the formula: `Revenue = Price × Quantity`
+- Sales volume is assumed to represent **completed transactions**, not returns or pending orders.
 
 ---
 
-## ✅ Summary Table
+## What's Next
+
+- **Data Quality Improvements**  
+  - Fix or backfill `"Unknown"` month values using raw timestamps or inferred logic  
+  - Implement validation rules in data entry systems to reduce formatting issues
+
+- **Product & Category Enrichment**  
+  - Add product metadata such as brand, margin, or return rates  
+  - Enable drill-down analysis on category subtypes or seasonal SKUs
+
+- **Dashboard Enhancements**  
+  - Add filters for region, order channel, or campaign code (if available)  
+  - Deploy dashboard to authenticated internal environment or public cloud  
+  - Include export options for stakeholders (e.g., PDF, CSV download)
+
+- **Predictive Insights**  
+  - Build a seasonality model to forecast monthly revenue  
+  - Use machine learning to identify drivers of high-performing products
+
+- **Automation & Reporting**  
+  - Automate daily or weekly data refreshes into the dashboard  
+  - Set up email alerts or Slack integrations for KPIs
+
+- **A/B Testing & Marketing Analysis**  
+  - Test promotional strategies like bundling, pricing changes, or ad timing  
+  - Link sales data to web analytics for a complete funnel view
+
+---
+
+##  Summary Table
 
 | Area | Recommendation |
 |------|----------------|
@@ -200,3 +228,37 @@ The goal of this analysis is to uncover actionable insights into what sells best
 | Monthly Trends | Promote in May, March, September; prep for peaks |
 | Data Quality | Clean unknown dates, enforce format rules |
 | Reporting | Automate summaries, explore live dashboards |
+
+
+## Technology Stack
+
+- **Python**  
+  - `pandas`: Data manipulation and analysis  
+  - `numpy`: Numerical operations  
+  - `matplotlib`: Static visualizations  
+  - `plotly`: Interactive charts  
+  - `openpyxl`: Excel file handling
+
+- **Streamlit**  
+  - Used to build and deploy the interactive dashboard interface
+
+- **Excel**  
+  - Initial data cleaning, formatting, and validation of raw sales data
+
+- **GitHub**  
+  - Version control and repository management  
+  - Hosting for code, dashboard files, and documentation
+
+
+# DISCLAIMER
+
+This project is for portfolio and educational display only.  
+No content may be reused without permission.
+
+---
+
+# CONNECT WITH ME
+
+- [LinkedIn](https://linkedin.com/in/desireesalvant)  
+- [GitHub](https://github.com/DesireeSalvant)  
+- [Portfolio](https://desireesalvant.com)  
